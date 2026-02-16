@@ -1,0 +1,270 @@
+.mem-container {
+
+  padding: 40px;
+  background: #f5f6f8;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+}
+
+/* ---------- TITLE ---------- */
+
+.subtitle {
+
+  color: #666;
+  margin-bottom: 20px;
+
+}
+
+/* ---------- INPUT ---------- */
+
+.input-row {
+
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+
+}
+
+.input-row input {
+
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+
+}
+
+.input-row input:focus {
+
+  outline: none;
+  border-color: #3f5ed7;
+  box-shadow: 0 0 5px rgba(63, 94, 215, 0.3);
+
+}
+
+/* ---------- ALGO BUTTONS ---------- */
+
+.algo-row {
+
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+
+.algo-row button {
+
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+
+}
+
+.algo-row button:hover {
+
+  background: #d6d6d6;
+
+}
+
+.algo-row button.active {
+
+  background: #3f5ed7;
+  color: white;
+
+}
+
+/* ---------- BUTTON ROW ---------- */
+
+.run-row {
+
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+
+.run-btn {
+
+  flex: 1;
+  padding: 14px;
+  background: #3f5ed7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+
+}
+
+.run-btn:hover {
+
+  background: #2d4bd3;
+
+}
+
+.refresh-btn {
+
+  width: 60px;
+  border: none;
+  border-radius: 10px;
+  background: #eee;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.refresh-btn:hover {
+
+  background: #ddd;
+
+}
+
+/* ---------- RESULT BOX ---------- */
+
+.result-box {
+
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeIn 0.4s ease;
+
+}
+
+/* ---------- MEMORY BAR ---------- */
+
+.memory-bar {
+
+  display: flex;
+  margin: 20px 0;
+
+}
+
+.memory-block {
+
+  display: flex;
+  flex: 1;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+  animation: grow 0.5s ease;
+
+}
+
+.process {
+
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+
+}
+
+.frag {
+
+  background: #ddd;
+  text-align: center;
+  padding: 10px;
+  color: #333;
+
+}
+
+/* ---------- TABLE ---------- */
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+
+}
+
+th, td {
+
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+
+}
+
+th {
+
+  background: #f0f0f0;
+
+}
+
+/* ---------- TOTAL FRAG ---------- */
+
+.total-frag {
+
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+/* ---------- EXPORT BUTTON ---------- */
+
+.export-btn {
+
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+
+}
+
+.export-btn:hover {
+
+  background: #059669;
+
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+    transform: translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes grow {
+
+  from {
+
+    transform: scaleX(0);
+
+  }
+
+  to {
+
+    transform: scaleX(1);
+
+  }
+
+}

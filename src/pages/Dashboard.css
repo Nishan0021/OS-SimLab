@@ -1,0 +1,55 @@
+.dashboard {
+  padding: 40px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f1f4b, #1a3a8f);
+  color: white;
+  padding: 80px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.badge {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 18px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero span {
+  color: #22c55e;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: #d1d5db;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.start-btn {
+  background: #22c55e;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.learn-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+}

@@ -1,0 +1,274 @@
+.page-container {
+
+  padding: 40px;
+  background: #f5f6f8;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+
+}
+
+/* ---------- ALGORITHM BUTTONS ---------- */
+
+.algo-box {
+
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+
+}
+
+.algo-box button {
+
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+
+}
+
+.algo-box button:hover {
+
+  background: #d6d6d6;
+
+}
+
+.algo-box .active {
+
+  background: #3f5ed7;
+  color: white;
+
+}
+
+/* ---------- INPUT ---------- */
+
+.input-box {
+
+  margin-bottom: 15px;
+
+}
+
+.input-box label {
+
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+.input-box input {
+
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+
+}
+
+.input-box input:focus {
+
+  outline: none;
+  border-color: #3f5ed7;
+  box-shadow: 0 0 5px rgba(63, 94, 215, 0.3);
+
+}
+
+/* ---------- BUTTON ROW ---------- */
+
+.run-row {
+
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+
+}
+
+.run-btn {
+
+  flex: 1;
+  padding: 12px;
+  background: #3f5ed7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+
+}
+
+.run-btn:hover {
+
+  background: #2d4bd3;
+
+}
+
+.refresh-btn {
+
+  width: 60px;
+  border-radius: 8px;
+  border: none;
+  background: #eee;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.refresh-btn:hover {
+
+  background: #ddd;
+
+}
+
+/* ---------- STATS ---------- */
+
+.stats {
+
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+  animation: fadeIn 0.4s ease;
+
+}
+
+.card {
+
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+
+}
+
+.card span {
+
+  display: block;
+  font-size: 14px;
+  color: gray;
+  margin-top: 5px;
+
+}
+
+/* ---------- FRAME ---------- */
+
+.frame {
+
+  padding: 6px;
+  border-radius: 6px;
+  background: #e5e7eb;
+  transition: 0.2s;
+
+}
+
+.changed {
+
+  background: #2f55d4;
+  color: white;
+  animation: pop 0.3s;
+
+}
+
+/* ---------- BADGES ---------- */
+
+.hit-badge {
+
+  color: #10b981;
+  font-weight: bold;
+
+}
+
+.fault-badge {
+
+  color: #ef4444;
+  font-weight: bold;
+
+}
+
+/* ---------- TABLE ---------- */
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease;
+
+}
+
+th, td {
+
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+
+}
+
+th {
+
+  background: #f0f0f0;
+
+}
+
+/* ---------- EXPORT BUTTON ---------- */
+
+.export-btn {
+
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+
+}
+
+.export-btn:hover {
+
+  background: #059669;
+
+}
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes pop {
+
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+@keyframes fadeIn {
+
+  from {
+
+    opacity: 0;
+    transform: translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+
+}
