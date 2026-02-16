@@ -1,35 +1,42 @@
 import "./Dashboard.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="dashboard">
+    <div className="dashboard-container">
 
       <div className="hero">
 
-        <div className="badge">
+        <div className="hero-badge">
           Interactive OS Concepts
         </div>
 
         <h1>
-          Learn Operating Systems
-          <br />
-          <span>by Doing</span>
+          Learn Operating Systems <br />
+          <span className="highlight">by Doing</span>
         </h1>
 
         <p>
-          Visualize CPU scheduling, memory management,
-          and page replacement algorithms with step-by-step
-          simulations and real-time analytics.
+          Visualize CPU scheduling, memory management, and page replacement
+          algorithms with step-by-step simulations and real-time analytics.
         </p>
 
-        <div className="buttons">
+        <div className="hero-buttons">
 
-          <Link to="/cpu" className="start-btn">
+          <button
+            className="start-btn"
+            onClick={() => navigate("/cpu")}
+          >
             ▶ Start Simulating
-          </Link>
+          </button>
 
-          <button className="learn-btn">
+          <button
+            className="learn-btn"
+            onClick={() => navigate("/memory")}
+          >
             📘 Learn More
           </button>
 
