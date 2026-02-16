@@ -1,38 +1,61 @@
-# OS-SimLab
+# 💻 OS SimLab
 
-OS SimLab is a React-based Operating System simulator that visualizes core OS algorithms with interactive input and real-time graphical results.
+OS SimLab is an interactive Operating System simulator built using React. It helps students visualize and understand core OS algorithms through step-by-step simulations and real-time graphical output.
 
-## Features
-
-• CPU Scheduling Simulator  
-  - FCFS  
-  - SJF  
-  - Round Robin  
-  - Gantt Chart + Metrics  
-
-• Memory Allocation Simulator  
-  - First Fit  
-  - Best Fit  
-  - Worst Fit  
-  - Fragmentation Visualization  
-
-• Page Replacement Simulator  
-  - FIFO  
-  - LRU  
-  - Optimal  
-  - Step-by-step frame table  
-
-## Tech Stack
-
-• React  
-• Vite  
-• JavaScript  
-• CSS  
-
-## Purpose
-
-Designed for OS Lab students to understand algorithms visually.
+🌐 Live Website: https://os-simlab.netlify.app/
 
 ---
 
-Developed by Nishan
+## 🚀 Features
+
+### 🧠 CPU Scheduling Simulator
+- FCFS (First Come First Serve)
+- SJF (Shortest Job First)
+- Round Robin
+- Gantt Chart visualization
+- Waiting Time & Turnaround Time calculation
+- Export results to PDF
+
+### 💾 Memory Allocation Simulator
+- First Fit
+- Best Fit
+- Worst Fit
+- Memory visualization
+- Fragmentation calculation
+
+### 📄 Page Replacement Simulator
+- FIFO
+- LRU
+- Optimal
+- Step-by-step table visualization
+- Page faults, hits, and fault rate
+- Animated frame updates
+
+### 📊 OS SimLab Dashboard
+- Unified dashboard for all simulators
+- Easy navigation between modules
+- Mobile responsive design
+
+---
+
+## 🛠️ Built With
+
+- React.js
+- Vite
+- JavaScript
+- CSS
+- jsPDF
+
+---
+
+## 🎯 Purpose
+
+This project is designed for Operating System Lab students to learn and visualize algorithms interactively instead of only theoretical learning.
+
+---
+
+## 👨‍💻 Author
+
+Nishan  
+Computer Science Engineering Student  
+
