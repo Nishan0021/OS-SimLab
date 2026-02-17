@@ -1,0 +1,221 @@
+.about-container {
+
+  min-height: calc(100vh - 70px);
+
+  padding: 40px 20px;
+
+  background: #f5f6f8;
+
+  text-align: center;
+
+}
+
+
+/* TITLE */
+
+.about-container h1 {
+
+  font-size: 36px;
+
+  color: #1e3a8a;
+
+  margin-bottom: 10px;
+
+}
+
+
+.about-sub {
+
+  color: #64748b;
+
+  margin-bottom: 30px;
+
+  font-size: 16px;
+
+}
+
+
+/* GRID */
+
+.team-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+  max-width: 1000px;
+
+  margin: auto;
+
+}
+
+
+/* CARD */
+
+.member-card {
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+
+}
+
+
+.member-card:hover {
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+}
+
+
+/* IMAGE */
+
+.member-img {
+
+  width: 120px;
+
+  height: 120px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  margin-bottom: 15px;
+
+  border: 3px solid #e2e8f0;
+
+}
+
+
+/* NAME */
+
+.member-card h2 {
+
+  margin-bottom: 5px;
+
+}
+
+
+/* ROLE */
+
+.role {
+
+  color: #22c55e;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+
+}
+
+
+/* SOCIAL ICON LINKS */
+
+.social-links {
+
+  margin-top: 15px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+}
+
+
+/* ICON BASE */
+
+.icon {
+
+  font-size: 26px;
+
+  color: #334155;
+
+  transition: 0.3s;
+
+}
+
+
+/* LINKEDIN COLOR */
+
+.icon.linkedin:hover {
+
+  color: #0077b5;
+
+  transform: scale(1.25);
+
+}
+
+
+/* GITHUB COLOR */
+
+.icon.github:hover {
+
+  color: #000;
+
+  transform: scale(1.25);
+
+}
+
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 900px) {
+
+  .team-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .team-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .about-container {
+
+    padding: 30px 15px;
+
+  }
+
+  .about-container h1 {
+
+    font-size: 28px;
+
+  }
+
+  .member-card {
+
+    padding: 20px;
+
+  }
+
+  .member-img {
+
+    width: 100px;
+
+    height: 100px;
+
+  }
+
+}
