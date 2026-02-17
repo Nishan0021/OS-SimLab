@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Cpu from "./pages/CPU";
 import Memory from "./pages/Memory";
 import PageSim from "./pages/Page";
+import Deadlock from "./pages/Deadlock";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path="/memory" element={<Memory />} />
 
         <Route path="/page" element={<PageSim />} />
+
+        <Route path="/deadlock" element={<Deadlock />} />
 
       </Routes>
     </>

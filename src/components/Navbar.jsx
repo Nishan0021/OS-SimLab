@@ -29,6 +29,10 @@ export default function Navbar() {
           Page Replacement
         </NavLink>
 
+        <NavLink to="/deadlock" className="nav-link">
+          Deadlock Detection
+        </NavLink>
+
       </div>
 
     </div>

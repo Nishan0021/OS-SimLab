@@ -1,0 +1,295 @@
+/* CSS for Deadlock Simulator Page */
+
+.deadlock-container .tab-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.deadlock-container .tab-btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    background: #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+    transition: 0.2s;
+    color: #555;
+}
+
+.deadlock-container .tab-btn:hover {
+    background: #d6d6d6;
+}
+
+.deadlock-container .tab-btn.active {
+    background: #3f5ed7;
+    color: #fff;
+}
+
+/* Reuse .card features but add margin handling if needed */
+.deadlock-container .card h2 {
+    color: #2d4bd3;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.deadlock-container .subtitle {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-row label {
+    font-weight: 700;
+    min-width: 160px;
+}
+
+.input-row input,
+.input-row select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+    min-width: 80px;
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: #3f5ed7;
+    box-shadow: 0 0 5px rgba(63, 94, 215, 0.3);
+}
+
+.matrix-wrapper {
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+.matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.matrix-table th,
+.matrix-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.matrix-table th {
+    background: #f0f0f0;
+}
+
+.matrix-table input {
+    width: 60px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: #3f5ed7;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2d4bd3;
+}
+
+.btn-secondary {
+    background: #e5e5e5;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #d6d6d6;
+}
+
+.btn-success {
+    background: #22c55e;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #15803d;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.step-log {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.log-item {
+    padding: 6px 10px;
+    border-left: 4px solid #ddd;
+    margin-bottom: 5px;
+    background: white;
+    border-radius: 0 4px 4px 0;
+}
+
+.log-item.safe {
+    border-left-color: #22c55e;
+}
+
+.log-item.unsafe {
+    border-left-color: #ef4444;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.badge.safe {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge.unsafe {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.rag-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.rag-controls select {
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.canvas-wrapper {
+    border: 2px solid #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+    background: white;
+}
+
+.legend {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    color: #666;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* Tutorial Modal */
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.tutorial-box {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Help Fab */
+.help-fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3f5ed7;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    z-index: 1000;
+}
+
+.help-panel {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
