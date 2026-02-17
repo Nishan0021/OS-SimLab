@@ -13,9 +13,10 @@ export default function CPU() {
   const [algo, setAlgo] = useState("FCFS");
   const [quantum, setQuantum] = useState("");
 
+  // FIXED: removed permanent id
   const [processes, setProcesses] = useState([
-    { id: "P1", arrival: "", burst: "" },
-    { id: "P2", arrival: "", burst: "" },
+    { arrival: "", burst: "" },
+    { arrival: "", burst: "" },
   ]);
 
   const [result, setResult] = useState(null);
@@ -112,9 +113,7 @@ export default function CPU() {
       return null;
 
     let time = 0;
-
     let queue = [];
-
     let gantt = [];
 
     let remaining = {};
@@ -185,8 +184,7 @@ export default function CPU() {
 
       p.turnaround = p.completion - p.arrival;
 
-      p.waiting =
-        p.turnaround - p.burst;
+      p.waiting = p.turnaround - p.burst;
 
     });
 
@@ -203,8 +201,8 @@ export default function CPU() {
           p.arrival !== "" &&
           p.burst !== ""
       )
-      .map(p => ({
-        ...p,
+      .map((p, i) => ({
+        id: "P" + (i + 1), // FIXED dynamic ID
         arrival: Number(p.arrival),
         burst: Number(p.burst),
       }));
@@ -250,12 +248,11 @@ export default function CPU() {
   function refresh() {
 
     setProcesses([
-      { id: "P1", arrival: "", burst: "" },
-      { id: "P2", arrival: "", burst: "" },
+      { arrival: "", burst: "" },
+      { arrival: "", burst: "" },
     ]);
 
     setQuantum("");
-
     setResult(null);
 
   }
@@ -263,11 +260,8 @@ export default function CPU() {
   // ---------- EXPORT PDF ----------
   async function exportPDF() {
 
-    const element =
-      resultRef.current;
-
     const canvas =
-      await html2canvas(element);
+      await html2canvas(resultRef.current);
 
     const img =
       canvas.toDataURL("image/png");
@@ -275,18 +269,9 @@ export default function CPU() {
     const pdf =
       new jsPDF();
 
-    pdf.addImage(
-      img,
-      "PNG",
-      10,
-      10,
-      190,
-      0
-    );
+    pdf.addImage(img, "PNG", 10, 10, 190, 0);
 
-    pdf.save(
-      "CPU_Scheduling_Result.pdf"
-    );
+    pdf.save("CPU_Scheduling_Result.pdf");
 
   }
 
@@ -295,9 +280,7 @@ export default function CPU() {
 
     <div className="cpu-container">
 
-      <h1>
-        CPU Scheduling Simulator
-      </h1>
+      <h1>CPU Scheduling Simulator</h1>
 
       <p>
         Simulate FCFS, SJF, and Round Robin
@@ -311,14 +294,8 @@ export default function CPU() {
 
           <button
             key={a}
-            className={
-              algo === a
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setAlgo(a)
-            }
+            className={algo === a ? "active" : ""}
+            onClick={() => setAlgo(a)}
           >
             {a}
           </button>
@@ -333,17 +310,13 @@ export default function CPU() {
 
         <div className="quantum-box">
 
-          <label>
-            Time Quantum
-          </label>
+          <label>Time Quantum</label>
 
           <input
             type="number"
             value={quantum}
             onChange={(e) =>
-              setQuantum(
-                e.target.value
-              )
+              setQuantum(e.target.value)
             }
           />
 
@@ -367,13 +340,10 @@ export default function CPU() {
 
         {processes.map((p, i) => (
 
-          <div
-            key={i}
-            className="process-row"
-          >
+          <div key={i} className="process-row">
 
             <span className="pid">
-              {p.id}
+              {"P" + (i + 1)}
             </span>
 
             <input
@@ -382,8 +352,7 @@ export default function CPU() {
               value={p.arrival}
               onChange={(e) => {
 
-                const copy =
-                  [...processes];
+                const copy = [...processes];
 
                 copy[i].arrival =
                   e.target.value;
@@ -399,8 +368,7 @@ export default function CPU() {
               value={p.burst}
               onChange={(e) => {
 
-                const copy =
-                  [...processes];
+                const copy = [...processes];
 
                 copy[i].burst =
                   e.target.value;
@@ -433,14 +401,7 @@ export default function CPU() {
           onClick={() =>
             setProcesses([
               ...processes,
-              {
-                id:
-                  "P" +
-                  (processes.length +
-                    1),
-                arrival: "",
-                burst: "",
-              },
+              { arrival: "", burst: "" },
             ])
           }
         >
@@ -491,12 +452,10 @@ export default function CPU() {
                   style={{
                     background:
                       colors[
-                        i %
-                          colors.length
+                        i % colors.length
                       ],
                     flex:
-                      g.end -
-                      g.start,
+                      g.end - g.start,
                   }}
                 >
                   {g.id}
@@ -528,28 +487,20 @@ export default function CPU() {
             <div className="stat-card">
 
               <h2>
-                {result.avgW.toFixed(
-                  2
-                )}
+                {result.avgW.toFixed(2)}
               </h2>
 
-              <p>
-                Avg Waiting
-              </p>
+              <p>Avg Waiting</p>
 
             </div>
 
             <div className="stat-card">
 
               <h2>
-                {result.avgT.toFixed(
-                  2
-                )}
+                {result.avgT.toFixed(2)}
               </h2>
 
-              <p>
-                Avg Turnaround
-              </p>
+              <p>Avg Turnaround</p>
 
             </div>
 
