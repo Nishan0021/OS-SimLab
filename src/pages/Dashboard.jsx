@@ -26,16 +26,18 @@ export default function Dashboard() {
 
         <div className="hero-buttons">
 
+          {/* FIXED: Start → Simulator page */}
           <button
             className="start-btn"
-            onClick={() => navigate("/cpu")}
+            onClick={() => navigate("/simulator")}
           >
             ▶ Start Simulating
           </button>
 
+          {/* Learn More */}
           <button
             className="learn-btn"
-            onClick={() => navigate("/memory")}
+            onClick={() => navigate("/resources")}
           >
             📘 Learn More
           </button>
