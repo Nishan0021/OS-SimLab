@@ -1,37 +1,55 @@
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
 
-  return (
-    <div className="navbar">
+  const location = useLocation();
 
+  return (
+
+    <nav className="navbar">
+
+      {/* LEFT — TEXT LOGO */}
       <div className="nav-left">
-        <span className="nav-logo">💻</span>
-        <span>OS SimLab</span>
+
+        <Link to="/" className="logo-text">
+
+          <span className="logo-os">OS</span>
+          <span className="logo-simlab">SimLab</span>
+
+        </Link>
+
       </div>
 
+
+      {/* RIGHT — NAV LINKS */}
       <div className="nav-right">
 
-        <NavLink to="/" className="nav-link">
+        <Link
+          to="/"
+          className={location.pathname === "/" ? "active" : ""}
+        >
           Dashboard
-        </NavLink>
+        </Link>
 
-        <NavLink to="/cpu" className="nav-link">
-          CPU Scheduling
-        </NavLink>
+        <Link
+          to="/simulator"
+          className={location.pathname === "/simulator" ? "active" : ""}
+        >
+          Simulator
+        </Link>
 
-        <NavLink to="/memory" className="nav-link">
-          Memory Management
-        </NavLink>
-
-        <NavLink to="/page" className="nav-link">
-          Page Replacement
-        </NavLink>
+        <Link
+          to="/about"
+          className={location.pathname === "/about" ? "active" : ""}
+        >
+          About
+        </Link>
 
       </div>
 
-    </div>
+    </nav>
+
   );
 
 }
