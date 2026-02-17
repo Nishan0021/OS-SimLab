@@ -1,0 +1,117 @@
+.sim-container {
+
+  min-height: calc(100vh - 70px);
+
+  padding: 40px 20px;
+
+  background: #f5f6f8;
+
+  text-align: center;
+
+}
+
+
+.sim-container h1 {
+
+  font-size: 36px;
+
+  color: #1e3a8a;
+
+  margin-bottom: 10px;
+
+}
+
+
+.sim-container p {
+
+  color: #64748b;
+
+  margin-bottom: 30px;
+
+}
+
+
+/* GRID */
+
+.sim-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+
+  max-width: 1000px;
+
+  margin: auto;
+
+}
+
+
+/* CARD */
+
+.sim-card {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+}
+
+
+.sim-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+.sim-card h2 {
+
+  color: #2563eb;
+
+  margin-bottom: 10px;
+
+}
+
+
+.sim-card p {
+
+  font-size: 14px;
+
+  color: #64748b;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .sim-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .sim-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
