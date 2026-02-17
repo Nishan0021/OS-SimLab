@@ -164,41 +164,57 @@ const Deadlock = () => {
                         <>
                             <div className="card">
                                 <h2>System State</h2>
-                                <div className="matrix-wrapper">
-                                    <h3>Allocation</h3>
-                                    <table className="matrix-table">
-                                        <thead><tr><th></th>{Array(numRes).fill().map((_, j) => <th key={j}>R{j}</th>)}</tr></thead>
-                                        <tbody>
-                                            {bankerData.alloc.map((row, i) => (
-                                                <tr key={i}><td><b>P{i}</b></td>{row.map((val, j) => (
-                                                    <td key={j}><input type="number" value={val} onChange={e => updateMatrix('alloc', i, j, e.target.value)} /></td>
-                                                ))}</tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                                <div className="matrices-row">
+                                    <div className="matrix-wrapper">
+                                        <h3>Allocation</h3>
+                                        <table className="matrix-table">
+                                            <thead><tr><th></th>{Array(numRes).fill().map((_, j) => <th key={j}>R{j}</th>)}</tr></thead>
+                                            <tbody>
+                                                {bankerData.alloc.map((row, i) => (
+                                                    <tr key={i}><td><b>P{i}</b></td>{row.map((val, j) => (
+                                                        <td key={j}><input type="number" value={val} onChange={e => updateMatrix('alloc', i, j, e.target.value)} /></td>
+                                                    ))}</tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div className="matrix-wrapper">
+                                        <h3>Max</h3>
+                                        <table className="matrix-table">
+                                            <thead><tr><th></th>{Array(numRes).fill().map((_, j) => <th key={j}>R{j}</th>)}</tr></thead>
+                                            <tbody>
+                                                {bankerData.max.map((row, i) => (
+                                                    <tr key={i}><td><b>P{i}</b></td>{row.map((val, j) => (
+                                                        <td key={j}><input type="number" value={val} onChange={e => updateMatrix('max', i, j, e.target.value)} /></td>
+                                                    ))}</tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-                                {/* Max & Available omitted for brevity, adding them quickly below */}
-                                <div className="matrix-wrapper">
-                                    <h3>Max</h3>
-                                    <table className="matrix-table">
-                                        <thead><tr><th></th>{Array(numRes).fill().map((_, j) => <th key={j}>R{j}</th>)}</tr></thead>
-                                        <tbody>
-                                            {bankerData.max.map((row, i) => (
-                                                <tr key={i}><td><b>P{i}</b></td>{row.map((val, j) => (
-                                                    <td key={j}><input type="number" value={val} onChange={e => updateMatrix('max', i, j, e.target.value)} /></td>
-                                                ))}</tr>
+                                <div className="matrices-row" style={{ marginTop: '10px' }}>
+                                    <div className="matrix-wrapper">
+                                        <h3>Need <span style={{ fontSize: '12px', color: '#888' }}>(Max − Alloc)</span></h3>
+                                        <table className="matrix-table">
+                                            <thead><tr><th></th>{Array(numRes).fill().map((_, j) => <th key={j}>R{j}</th>)}</tr></thead>
+                                            <tbody>
+                                                {bankerData.max.map((row, i) => (
+                                                    <tr key={i}><td><b>P{i}</b></td>{row.map((val, j) => (
+                                                        <td key={j} style={{ background: '#f9fafb' }}>{val - bankerData.alloc[i][j]}</td>
+                                                    ))}</tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div className="matrix-wrapper">
+                                        <h3>Available</h3>
+                                        <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                                            {bankerData.avail.map((val, j) => (
+                                                <div key={j}>
+                                                    <b>R{j}:</b> <input type="number" value={val} onChange={e => updateMatrix('avail', 0, j, e.target.value)} style={{ width: '60px' }} />
+                                                </div>
                                             ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div className="matrix-wrapper">
-                                    <h3>Available</h3>
-                                    <div style={{ display: 'flex', gap: '10px' }}>
-                                        {bankerData.avail.map((val, j) => (
-                                            <div key={j}>
-                                                <b>R{j}:</b> <input type="number" value={val} onChange={e => updateMatrix('avail', 0, j, e.target.value)} style={{ width: '60px' }} />
-                                            </div>
-                                        ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
