@@ -1,28 +1,49 @@
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+async function exportPDF() {
 
-export async function exportToPDF(elementId, fileName = "result") {
-  const input = document.getElementById(elementId);
+  const element = resultRef.current;
 
-  if (!input) {
-    alert("Nothing to export!");
-    return;
-  }
-
-  const canvas = await html2canvas(input, {
-    scale: 2,
+  // HIGH QUALITY CANVAS
+  const canvas = await html2canvas(element, {
+    scale: 3, // higher scale = sharper colors
     useCORS: true,
+    backgroundColor: "#ffffff"
   });
 
-  const imgData = canvas.toDataURL("image/png");
+  const imgData = canvas.toDataURL("image/png", 1.0);
 
-  const pdf = new jsPDF("p", "mm", "a4");
+  const pdf = new jsPDF({
+    orientation: "portrait",
+    unit: "mm",
+    format: "a4"
+  });
 
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight =
-    (canvas.height * pdfWidth) / canvas.width;
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
 
-  pdf.addImage(imgData, "PNG", 0, 10, pdfWidth, pdfHeight);
+  const imgWidth = pageWidth - 20;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-  pdf.save(fileName + ".pdf");
+  // CENTER CONTENT
+  let y = (pageHeight - imgHeight) / 2;
+
+  // IF CONTENT TOO LARGE → SCALE TO FIT ONE PAGE
+  if (imgHeight > pageHeight - 20) {
+
+    const scale = (pageHeight - 20) / imgHeight;
+
+    const newWidth = imgWidth * scale;
+    const newHeight = imgHeight * scale;
+
+    const centerX = (pageWidth - newWidth) / 2;
+    const centerY = (pageHeight - newHeight) / 2;
+
+    pdf.addImage(imgData, "PNG", centerX, centerY, newWidth, newHeight);
+
+  } else {
+
+    pdf.addImage(imgData, "PNG", 10, y, imgWidth, imgHeight);
+
+  }
+
+  pdf.save("CPU_Scheduling_Result.pdf");
 }
